@@ -1,0 +1,31 @@
+server:
+  port: 8110 # 服务端口
+spring:
+  profiles:
+    active: dev # 环境设置
+  application:
+    name: service # 服务名
+  datasource: # mysql数据库连接
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/itonline?characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: admin
+  jackson: #返回json的全局时间格式
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  logging:
+    level:
+    root: ERROR
+#mybatis日志
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:com/rjw/itonline/edu/mapper/xml/*.xml
+#阿里云Oss服务
+aliyun:
+  oss:
+   endpoint: oss-cn-beijing.aliyuncs.com
+   accessKeyId: LTAI4GKL8FD5PbmdeFzmXBHt
+   accessKeySecret: M5fvYqTdqcucPKzvzGk1Er7gKnjsYa
+   bucketName: itonline
+debug: true

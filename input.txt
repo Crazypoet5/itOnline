@@ -1,0 +1,25 @@
+<build>
+2
+
+3
+    <!-- 项目打包时会将java目录中的*.xml文件也进行打包 -->
+4
+    <resources>
+5
+        <resource>
+6
+            <directory>src/main/java</directory>
+7
+            <includes>
+8
+                <include>**/*.xml</include>
+9
+            </includes>
+10
+            <filtering>false</filtering>
+11
+        </resource>
+12
+    </resources>
+13
+</build>
