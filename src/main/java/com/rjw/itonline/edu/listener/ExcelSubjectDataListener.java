@@ -87,8 +87,6 @@ public class ExcelSubjectDataListener extends AnalysisEventListener<ExcelSubject
         queryWrapper.eq ("parent_id", "0"); //一级分类
         return subjectMapper.selectOne (queryWrapper);
     }
-
-
     /**
      * 根据分类的名称和父id查询数据是否存在
      *

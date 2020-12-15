@@ -1,25 +1,24 @@
-<build>
+@ApiOperation("根据id发布课程")
 2
-
+@PutMapping("publish-course/{id}")
 3
-    <!-- 项目打包时会将java目录中的*.xml文件也进行打包 -->
+public R publishCourseById(
 4
-    <resources>
+    @ApiParam(value = "课程ID", required = true)
 5
-        <resource>
+    @PathVariable String id){
 6
-            <directory>src/main/java</directory>
 7
-            <includes>
+    boolean result = courseService.publishCourseById(id);
 8
-                <include>**/*.xml</include>
+    if (result) {
 9
-            </includes>
+        return R.ok().message("发布成功");
 10
-            <filtering>false</filtering>
+    } else {
 11
-        </resource>
+        return R.error().message("数据不存在");
 12
-    </resources>
+    }
 13
-</build>
+}

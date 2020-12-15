@@ -1,16 +1,33 @@
 package com.rjw.itonline.edu.service;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.rjw.itonline.edu.entity.Course;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.rjw.itonline.edu.entity.form.CourseInfoForm;
+import com.rjw.itonline.edu.entity.vo.CoursePublishVo;
+import com.rjw.itonline.edu.entity.vo.CourseQueryVo;
+import com.rjw.itonline.edu.entity.vo.CourseVo;
 
 /**
  * <p>
  * 课程 服务类
  * </p>
- *
  * @author 饶嘉伟
  * @since 2020-12-08
  */
-public interface CourseService extends IService<Course> {
 
+public interface CourseService extends IService<Course> {
+    String saveCourseInfo(CourseInfoForm courseInfoForm);
+
+    CourseInfoForm getCourseInfoById(String id);
+
+    void updateCourseInfoById(CourseInfoForm courseInfoForm);
+
+    IPage<CourseVo>  selectPage(Long page, Long limit, CourseQueryVo courseQueryVo);
+
+    boolean removeCourseById(String id);
+
+    CoursePublishVo getCoursePublishVoById(String id);
+
+    boolean publishCourseById(String id);
 }

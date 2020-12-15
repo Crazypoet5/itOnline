@@ -24,12 +24,12 @@ public class FileUpLoad {
     @Autowired
     private ALiOssComponent aliOss;
 
-    final String avatarUPloadPath = "avatar";
+    final String avatarUPloadPath = "avatar/";
 
-    public String upload(InputStream is, String originalName) throws IOException {
+    public String upload(InputStream is, String root,String originalName) throws IOException {
 
 // 上传文件到OSS时需要指定包含文件后缀在内的完整路径，例如abc/efg/123.jpg。
-        String objectName = avatarUPloadPath +
+        String objectName = root +"/"+
                 new DateTime ().toString ("yyyy/MM/dd")+"/"
                 + UUID.randomUUID ().toString () +originalName;
 

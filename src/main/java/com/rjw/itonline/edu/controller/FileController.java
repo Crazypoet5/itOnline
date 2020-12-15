@@ -31,7 +31,7 @@ public class FileController {
             @RequestParam("module") String module) throws IOException {
         InputStream inputStream = file.getInputStream ();
         String originalFilename = file.getOriginalFilename ();
-        String uploadUrl = fileUpLoad.upload (inputStream, originalFilename);
+        String uploadUrl = fileUpLoad.upload (inputStream, module,originalFilename);
         //返回r对象
         return Result.ok ().message ("文件上传成功").data ("url", uploadUrl);
     }

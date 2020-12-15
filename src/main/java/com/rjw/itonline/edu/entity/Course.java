@@ -18,7 +18,6 @@ import lombok.experimental.Accessors;
  * <p>
  * 课程
  * </p>
- *
  * @author 饶嘉伟
  * @since 2020-12-08
  */
@@ -31,8 +30,12 @@ public class Course implements Serializable {
 
     private static final long serialVersionUID=1L;
 
+    //表明该课程在草稿状态
+    public static final String COURSE_DRAFT = "Draft";
+    //表明该课程正常发布
+    public static final String COURSE_NORMAL = "Normal";
     @ApiModelProperty(value = "课程ID")
-      @TableId(value = "id", type = IdType.ASSIGN_ID)
+    @TableId(value = "id", type = IdType.ASSIGN_ID)
     private String id;
 
     @ApiModelProperty(value = "课程讲师ID")

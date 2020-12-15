@@ -2,6 +2,7 @@ package com.rjw.itonline.edu.mapper;
 
 import com.rjw.itonline.edu.entity.CourseDescription;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.springframework.stereotype.Repository;
 
 /**
  * <p>
@@ -11,6 +12,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author 饶嘉伟
  * @since 2020-12-08
  */
+
+@Repository
 public interface CourseDescriptionMapper extends BaseMapper<CourseDescription> {
 
 }

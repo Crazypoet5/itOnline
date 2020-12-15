@@ -1,12 +1,12 @@
-<build>
-    <!-- 项目打包时会将java目录中的*.xml文件也进行打包 -->
-    <resources>
-        <resource>
-            <directory>src/main/java</directory>
-            <includes>
-                <include>**/*.xml</include>
-            </includes>
-            <filtering>false</filtering>
-        </resource>
-    </resources>
-</build>
+@ApiOperation("根据id发布课程")
+@PutMapping("publish-course/{id}")
+public R publishCourseById(
+    @ApiParam(value = "课程ID", required = true)
+    @PathVariable String id){
+    boolean result = courseService.publishCourseById(id);
+    if (result) {
+        return R.ok().message("发布成功");
+    } else {
+        return R.error().message("数据不存在");
+    }
+}
