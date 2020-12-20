@@ -236,20 +236,7 @@
             <version>${aliyun-java-sdk-vod.version}</version>
 
         </dependency>
-
-        <!--<dependency>-->
-
-        <!--<groupId>com.aliyun</groupId>-->
-
-        <!--<artifactId>aliyun-sdk-vod-upload</artifactId>-->
-
-        <!--<version>${aliyun-sdk-vod-upload.version}</version>-->
-
-        <!--</dependency>-->
-
-
         <!--json-->
-
         <dependency>
 
             <groupId>com.alibaba</groupId>
@@ -321,7 +308,12 @@
 
         </dependency>
 
-
+        <!--非开源jar-->
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-sdk-vod-upload</artifactId>
+            <version>${aliyun-sdk-vod-upload.version}</version>
+        </dependency>
     </dependencies>
 
     <build>

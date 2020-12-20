@@ -2,7 +2,6 @@ package com.rjw.itonline.edu.controller;
 
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.api.R;
 import com.rjw.itonline.common.utils.Result;
 import com.rjw.itonline.edu.entity.form.CourseInfoForm;
 import com.rjw.itonline.edu.entity.vo.CoursePublishVo;
@@ -60,7 +59,6 @@ public class CourseController {
     @ApiOperation("分页课程列表")
     @GetMapping("list/{page}/{limit}")
     public Result index(
-
             @PathVariable Long page, // 当前页码
             @PathVariable Long limit,//每页记录数//
             CourseQueryVo courseQueryVo//前端传过来的对象

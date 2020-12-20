@@ -16,6 +16,11 @@ spring:
   logging:
     level:
     root: ERROR
+    #设置上传的最大值为1G
+  servlet:
+    multipart:
+      max-file-size: 1024MB # 最大上传单个文件大小：默认1M
+      max-request-size: 1024MB # 最大置总上传的数据大小 ：默认10M
 #mybatis日志
 mybatis-plus:
   configuration:
@@ -28,4 +33,11 @@ aliyun:
    accessKeyId: LTAI4GKL8FD5PbmdeFzmXBHt
    accessKeySecret: M5fvYqTdqcucPKzvzGk1Er7gKnjsYa
    bucketName: itonline
+   #阿里云视频服务
+  vod:
+    keyid: LTAI4GKL8FD5PbmdeFzmXBHt
+    keysecret: M5fvYqTdqcucPKzvzGk1Er7gKnjsYa
+    templateGroupId: 222
+    workflowId: 0
 debug: true
+

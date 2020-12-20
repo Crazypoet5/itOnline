@@ -1,11 +1,11 @@
-@ApiOperation("根据id发布课程")
-@PutMapping("publish-course/{id}")
-public R publishCourseById(
-    @ApiParam(value = "课程ID", required = true)
+@ApiOperation("根据id查询章节")
+@GetMapping("get/{id}")
+public R getById(
+    @ApiParam(value="章节id", required = true)
     @PathVariable String id){
-    boolean result = courseService.publishCourseById(id);
-    if (result) {
-        return R.ok().message("发布成功");
+    Chapter chapter = chapterService.getById(id);
+    if (chapter != null) {
+        return R.ok().data("item", chapter);
     } else {
         return R.error().message("数据不存在");
     }

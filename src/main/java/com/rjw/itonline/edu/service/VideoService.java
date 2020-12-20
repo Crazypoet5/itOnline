@@ -3,6 +3,8 @@ package com.rjw.itonline.edu.service;
 import com.rjw.itonline.edu.entity.Video;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.io.InputStream;
+
 /**
  * <p>
  * 课程视频 服务类
@@ -13,4 +15,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface VideoService extends IService<Video> {
 
+    String uploadVideo(InputStream inputStream, String originalFilename);
 }
